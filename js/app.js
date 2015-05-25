@@ -1,6 +1,7 @@
 (function(){
 
 	var Model = {
+    selectedCat: null,
     cats: [
       {
   			name: 'Meow',
@@ -23,19 +24,21 @@
   };
 
 	var Controller = {
-		selectedCat: Model.cats[0],
+    getSelectedCat: function() {
+      return Model.selectedCat;
+    },
 
 		getAllCats: function(){
 			return Model.cats;
 		},
 
 		selectCat: function(index){
-			Controller.selectedCat = Model.cats[index];
+			Model.selectedCat = Model.cats[index];
 			SelectedView.render();
 		},
 
 		addCount: function(){
-			Controller.selectedCat.count++;
+			Model.selectedCat.count++;
       SelectedView.renderCountSelection();
 		},
 
@@ -95,12 +98,12 @@
     },
 
     renderCatSelection: function(){
-      var catImage = Controller.selectedCat.img;
+      var catImage = Controller.getSelectedCat().img;
       SelectedView.imageElement.src = 'img/'+ catImage + '.jpg';
     },
 
     renderCountSelection: function(){
-      var catCount = Controller.selectedCat.count;
+      var catCount = Controller.getSelectedCat().count;
       SelectedView.countElement.innerHTML = catCount;
     },
 
