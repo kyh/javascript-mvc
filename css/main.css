@@ -22,11 +22,11 @@ main {
 
 .list {
 	width: 200px;
-	padding: 0 10px;
 }
 
-.list > div {
-	margin-bottom: 10px;
+.list h4 {
+	margin: 0;
+	padding: 10px;
 }
 
 .list > div.selected-cat {
