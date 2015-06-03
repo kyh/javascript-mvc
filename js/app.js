@@ -1,55 +1,55 @@
 (function(){
 
-	var Model = {
+  var Model = {
     selectedCat: null,
     cats: [
       {
-  			name: 'Meow',
-  			img: 'cat1',
-  			count: 0
-  		}, {
-  			name: 'Whiskers',
-  			img: 'cat2',
-  			count: 0
-  		}, {
-  			name: 'Fluffy',
-  			img: 'cat3',
-  			count: 0
-  		}, {
-  			name: 'Purr',
-  			img: 'cat4',
-  			count: 0
-  		}
-  	]
+        name: 'Meow',
+        img: 'cat1',
+        count: 0
+      }, {
+        name: 'Whiskers',
+        img: 'cat2',
+        count: 0
+      }, {
+        name: 'Fluffy',
+        img: 'cat3',
+        count: 0
+      }, {
+        name: 'Purr',
+        img: 'cat4',
+        count: 0
+      }
+    ]
   };
 
-	var Controller = {
+  var Controller = {
     getSelectedCat: function() {
       return Model.selectedCat;
     },
 
-		getAllCats: function(){
-			return Model.cats;
-		},
+    getAllCats: function(){
+      return Model.cats;
+    },
 
-		selectCat: function(index){
-			Model.selectedCat = Model.cats[index];
-			SelectedView.render();
-		},
+    selectCat: function(index){
+      Model.selectedCat = Model.cats[index];
+      SelectedView.render();
+    },
 
-		addCount: function(){
-			Model.selectedCat.count++;
+    addCount: function(){
+      Model.selectedCat.count++;
       SelectedView.renderCountSelection();
-		},
+    },
 
     init: function(){
       ListView.init();
       SelectedView.init();
     }
-	};
+  };
 
-	var ListView = {
-		init: function(){
+  var ListView = {
+    init: function(){
       var cats = Controller.getAllCats();
       var catListElement = document.querySelector('#cat-list');
 
@@ -80,8 +80,8 @@
         wrapper.innerHTML = '<h4 class="name">'+currentCat.name+'</h4>';
         return wrapper;
       }
-		}
-	};
+    }
+  };
 
   var SelectedView = {
     imageElement: document.querySelector('#selected-cat'),
