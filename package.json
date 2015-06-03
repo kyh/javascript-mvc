@@ -1,0 +1,22 @@
+{
+  "name": "cat-clicker",
+  "version": "1.0.0",
+  "description": "Click on a cat to increase its count",
+  "main": "js/app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tehkaiyu/javascript-mvc.git"
+  },
+  "author": "Kaiyu Hsu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tehkaiyu/javascript-mvc/issues"
+  },
+  "homepage": "https://github.com/tehkaiyu/javascript-mvc",
+  "devDependencies": {
+    "browserify": "^10.2.3",
+    "gulp": "^3.9.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.1"
+  }
+}
